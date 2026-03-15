@@ -1,76 +1,132 @@
-# FocusFlow AI 🧠
+🚀 FocusFlow AI
 
-An intelligent productivity tracking system that uses 
-4 Machine Learning models to monitor work patterns 
-and prevent burnout in real-time.
+FocusFlow AI is a full‑stack productivity monitoring system that analyzes user work patterns using Machine Learning.
+The system tracks browser activity, detects focus drift, predicts burnout risk, and provides real‑time productivity insights through an interactive dashboard.
 
-## What it does
-- Tracks keyboard, mouse, and tab activity silently
-- Detects focus drift using Gradient Boosting ML model
-- Predicts burnout risk from 7-day work patterns
-- Forecasts task completion probability
-- Sends real-time alerts via Socket.io
+✨ Features
+📊 Real‑time productivity monitoring
+🧠 Machine learning‑based behavior analysis
+⚡ Live alerts for focus drift using Socket.io
+📅 Daily task scheduling and tracking
+📈 Interactive productivity dashboard
+🔮 Burnout risk prediction
+📉 Weekly analytics reports
 
-## Tech Stack
-- Frontend: React.js + Tailwind CSS + Recharts
-- Backend: Node.js + Express + Socket.io
-- ML Service: Python + FastAPI + scikit-learn
-- Database: MongoDB Atlas
+🛠 Tech Stack
+Frontend
+React.js
+Tailwind CSS
+Recharts
+Socket.io Client
+Axios
 
-## ML Models
-| Model | Algorithm | Purpose |
-|-------|-----------|---------|
-| Productivity Classifier | Random Forest | Labels session productivity |
-| Focus Drift Detector | Gradient Boosting | Real-time distraction detection |
-| Burnout Predictor | Logistic Regression | 7-day burnout risk |
-| Task Adherence | Decision Tree | Task completion prediction |
+Backend
+Node.js
+Express.js
+MongoDB Atlas
+Mongoose
+JWT Authentication
+bcryptjs
 
-## Setup Instructions
+ML Service
+Python
+FastAPI
+scikit‑learn
+pandas
+numpy
 
-### Prerequisites
-- Node.js v16+
-- Python 3.11+
-- MongoDB Atlas account
+📂 Project Structure
+focusflow-ai
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   └── server.js
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   └── services
+│
+├── ml
+│   ├── training
+│   ├── models
+│   └── main.py
+│
+└── README.md
 
-### 1. Clone the repo
+⚙️ Installation
+1️⃣ Clone Repository
 git clone https://github.com/YOUR_USERNAME/focusflow-ai.git
 cd focusflow-ai
-
-### 2. Backend
+Backend Setup
 cd backend
 npm install
-cp .env.example .env
-# Fill in your values in .env
 npm run dev
+Runs on:
+http://localhost:5000
 
-### 3. ML Service
+ML Service Setup
 cd ml
 python -m venv venv
-.\venv\Scripts\Activate.ps1  # Windows
-source venv/bin/activate      # Mac/Linux
-pip install fastapi uvicorn scikit-learn pandas numpy joblib python-multipart
-python training/train_productivity.py
-python training/train_focus_drift.py
-python training/train_burnout.py
-python training/train_adherence.py
+.\venv\Scripts\Activate
+pip install fastapi uvicorn scikit-learn pandas numpy joblib
 uvicorn main:app --reload --port 8000
+Runs on:
+http://localhost:8000
 
-### 4. Frontend
+Frontend Setup
 cd frontend
 npm install
-cp .env.example .env
-# Fill in your values in .env
 npm start
-
-### 5. Open browser
+Runs on:
 http://localhost:3000
 
-## Screenshots
-(Add screenshots of your dashboard here)
+📡 API Overview
+Auth
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+Tasks
+GET /api/tasks
+POST /api/tasks
+PUT /api/tasks/:id
+DELETE /api/tasks/:id
+Sessions
+POST /api/sessions/start
+PUT /api/sessions/:id/end
+Analytics
+GET /api/analytics/dashboard
+GET /api/analytics/weekly
 
-## Live Demo
-(Add your deployed URL here after Day 7 deployment)
+🧠 How It Works
+User logs in and creates tasks.
+Work session begins and browser activity is tracked.
+Activity data is sent to the backend periodically.
+Backend sends data to the ML service.
+ML models analyze productivity, focus drift, and burnout risk.
+Results appear on the dashboard with real‑time alerts.
 
-## Developer
-Made by: Patel Richa
-MCA Project — 2026
+🗄 Database Collections
+users
+tasks
+sessions
+activitylogs
+analytics
+
+▶ Run Full Application
+Start all three services:
+Backend  → localhost:5000
+ML API   → localhost:8000
+Frontend → localhost:3000
+
+📌 Future Improvements
+Browser extension for activity tracking
+Mobile dashboard
+Personalized productivity recommendations
+
+AI‑based habit coaching
+
