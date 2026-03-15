@@ -1,8 +1,10 @@
 🚀 FocusFlow AI
+
 FocusFlow AI is a full‑stack productivity monitoring system that analyzes user work patterns using Machine Learning.
 It tracks browser activity, detects focus drift, predicts burnout risk, and provides real‑time productivity insights through an interactive dashboard.
 
 ✨ Key Features
+
 Real‑time productivity monitoring
 
 Browser activity tracking (keyboard, mouse, tabs)
