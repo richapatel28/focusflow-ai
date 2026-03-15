@@ -1,7 +1,6 @@
 🚀 FocusFlow AI
-
 FocusFlow AI is a full‑stack productivity monitoring system that analyzes user work patterns using Machine Learning.
-It tracks browser activity, detects focus drift, predicts burnout risk, and provides real‑time productivity insights through an interactive dashboard.
+It tracks browser activity, detects focus drift, predicts burnout risk, and displays insights on a real‑time dashboard.
 
 ✨ Key Features
 
@@ -20,6 +19,7 @@ Interactive analytics dashboard
 Weekly productivity insights
 
 🛠 Tech Stack
+
 Frontend
 React.js
 
@@ -62,7 +62,7 @@ joblib
 Database
 MongoDB Atlas (Cloud Database)
 
-📂 Project Structure
+📦 Project Structure
 focusflow-ai
 │
 ├── backend
@@ -92,34 +92,38 @@ focusflow-ai
 │
 ├── .gitignore
 └── README.md
+
 ⚙️ Installation Guide
-1. Clone Repository
+1️⃣ Clone Repository
 git clone https://github.com/YOUR_USERNAME/focusflow-ai.git
 cd focusflow-ai
+
 🖥 Backend Setup
 cd backend
 npm install
 npm run dev
-Backend runs on:
 
+Backend runs on:
 http://localhost:5000
+
 🧠 ML Service Setup
+
 cd ml
 python -m venv venv
 .\venv\Scripts\Activate
 pip install fastapi uvicorn scikit-learn pandas numpy joblib
 uvicorn main:app --reload --port 8000
 ML service runs on:
-
 http://localhost:8000
+
 🌐 Frontend Setup
 cd frontend
 npm install
 npm start
 Frontend runs on:
-
 http://localhost:3000
-📡 API Overview
+
+🔌 API Overview
 Authentication
 POST /api/auth/register
 POST /api/auth/login
@@ -136,27 +140,12 @@ Analytics
 GET /api/analytics/dashboard
 GET /api/analytics/weekly
 🧠 System Workflow
-User registers and logs in.
-
-User creates tasks in the schedule planner.
-
-A work session begins and browser activity tracking starts.
-
-Activity data is sent to the backend periodically.
-
-Backend forwards data to the ML service for predictions.
-
-ML models analyze:
-
-productivity level
-
-focus drift
-
-burnout risk
-
-task adherence
-
-Results appear on the dashboard with real‑time alerts.
+1️⃣ User registers and logs in
+2️⃣ User creates tasks in schedule planner
+3️⃣ Work session starts and browser activity tracking begins
+4️⃣ Activity data is sent to backend periodically
+5️⃣ Backend sends data to ML service for predictions
+6️⃣ Dashboard displays productivity insights and alerts
 
 🗄 Database Collections
 MongoDB automatically creates these collections:
@@ -167,16 +156,16 @@ sessions
 activitylogs
 analytics
 ▶ Running the Full Application
-Start all services:
+Run all three services:
 
 Backend  → http://localhost:5000
 ML API   → http://localhost:8000
 Frontend → http://localhost:3000
 🔮 Future Improvements
-Browser extension for better activity tracking
+Browser extension for activity tracking
 
 Mobile dashboard
 
-AI‑based productivity coaching
+Personalized productivity insights
 
-Personalized habit recommendations
+AI‑based habit recommendations
