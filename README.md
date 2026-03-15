@@ -178,4 +178,3 @@ Mobile dashboard
 AI‑based productivity coaching
 
 Personalized habit recommendations
-
