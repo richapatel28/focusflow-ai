@@ -1,22 +1,21 @@
 🚀 FocusFlow AI
-
 FocusFlow AI is a full‑stack productivity monitoring system that analyzes user work patterns using Machine Learning.
-The system tracks browser activity, detects focus drift, predicts burnout risk, and provides real‑time productivity insights through an interactive dashboard.
+It tracks browser activity, detects focus drift, predicts burnout risk, and provides real‑time productivity insights through an interactive dashboard.
 
-✨ Features
-📊 Real‑time productivity monitoring
+✨ Key Features
+Real‑time productivity monitoring
 
-🧠 Machine learning‑based behavior analysis
+Browser activity tracking (keyboard, mouse, tabs)
 
-⚡ Live alerts for focus drift using Socket.io
+Focus drift detection with live alerts
 
-📅 Daily task scheduling and tracking
+Burnout risk prediction
 
-📈 Interactive productivity dashboard
+Daily task scheduling
 
-🔮 Burnout risk prediction
+Interactive analytics dashboard
 
-📉 Weekly analytics reports
+Weekly productivity insights
 
 🛠 Tech Stack
 Frontend
@@ -29,6 +28,8 @@ Recharts
 Socket.io Client
 
 Axios
+
+React Router
 
 Backend
 Node.js
@@ -43,7 +44,7 @@ JWT Authentication
 
 bcryptjs
 
-ML Service
+Machine Learning Service
 Python
 
 FastAPI
@@ -54,102 +55,127 @@ pandas
 
 numpy
 
+joblib
+
+Database
+MongoDB Atlas (Cloud Database)
+
 📂 Project Structure
 focusflow-ai
 │
 ├── backend
+│   ├── config
 │   ├── controllers
 │   ├── models
 │   ├── routes
 │   ├── middleware
+│   ├── services
+│   ├── socket
+│   ├── jobs
 │   └── server.js
 │
 ├── frontend
 │   ├── src
 │   │   ├── components
 │   │   ├── pages
+│   │   ├── hooks
+│   │   ├── context
 │   │   └── services
 │
 ├── ml
 │   ├── training
 │   ├── models
+│   ├── schemas
 │   └── main.py
 │
+├── .gitignore
 └── README.md
-⚙️ Installation
-1️⃣ Clone Repository
+⚙️ Installation Guide
+1. Clone Repository
 git clone https://github.com/YOUR_USERNAME/focusflow-ai.git
 cd focusflow-ai
-Backend Setup
+🖥 Backend Setup
 cd backend
 npm install
 npm run dev
-Runs on:
+Backend runs on:
 
 http://localhost:5000
-ML Service Setup
+🧠 ML Service Setup
 cd ml
 python -m venv venv
 .\venv\Scripts\Activate
 pip install fastapi uvicorn scikit-learn pandas numpy joblib
 uvicorn main:app --reload --port 8000
-Runs on:
+ML service runs on:
 
 http://localhost:8000
-Frontend Setup
+🌐 Frontend Setup
 cd frontend
 npm install
 npm start
-Runs on:
+Frontend runs on:
 
 http://localhost:3000
 📡 API Overview
-Auth
+Authentication
 POST /api/auth/register
 POST /api/auth/login
 GET  /api/auth/me
 Tasks
-GET /api/tasks
-POST /api/tasks
-PUT /api/tasks/:id
+GET    /api/tasks
+POST   /api/tasks
+PUT    /api/tasks/:id
 DELETE /api/tasks/:id
 Sessions
 POST /api/sessions/start
-PUT /api/sessions/:id/end
+PUT  /api/sessions/:id/end
 Analytics
 GET /api/analytics/dashboard
 GET /api/analytics/weekly
-🧠 How It Works
-User logs in and creates tasks.
+🧠 System Workflow
+User registers and logs in.
 
-Work session begins and browser activity is tracked.
+User creates tasks in the schedule planner.
+
+A work session begins and browser activity tracking starts.
 
 Activity data is sent to the backend periodically.
 
-Backend sends data to the ML service.
+Backend forwards data to the ML service for predictions.
 
-ML models analyze productivity, focus drift, and burnout risk.
+ML models analyze:
+
+productivity level
+
+focus drift
+
+burnout risk
+
+task adherence
 
 Results appear on the dashboard with real‑time alerts.
 
 🗄 Database Collections
+MongoDB automatically creates these collections:
+
 users
 tasks
 sessions
 activitylogs
 analytics
-▶ Run Full Application
-Start all three services:
+▶ Running the Full Application
+Start all services:
 
-Backend  → localhost:5000
-ML API   → localhost:8000
-Frontend → localhost:3000
-📌 Future Improvements
-Browser extension for activity tracking
+Backend  → http://localhost:5000
+ML API   → http://localhost:8000
+Frontend → http://localhost:3000
+🔮 Future Improvements
+Browser extension for better activity tracking
 
 Mobile dashboard
 
-Personalized productivity recommendations
+AI‑based productivity coaching
 
-AI‑based habit coaching
+Personalized habit recommendations
 
